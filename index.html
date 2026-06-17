@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Library Management System</h1>
+    <nav>
+        <a href = "/library_add">Add Account</a>
+        <br>
+        <a href = "/my_loan">Loan Content</a>
+    </nav>
+
+    {% for account in account %}
+    <div>
+        <h3>ID: {{ account['account_id'] }}</h3>
+        <p>Email: {{account['email'] }}</p>
+    </div>
+
+    <br>
+
+    <a href = "/delete/{{ account['account_id']}}" style = "color: red; margin-left: 20px">
+        Remove From Library
+    </a>
+    {% endfor %}
+    
+</body>
+</html>

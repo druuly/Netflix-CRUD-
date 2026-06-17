@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for content in content %}
+    <p> Title: {{ content.title }} <br> Genre: {{ content.content_type }} <br> Release Year: {{ content.release_year}} </p>
+    <form action="/borrow" method="POST">
+        <input type="hidden" name="content_id" value="{{ content.content_id }}">
+        <a href="{{ content.content_link }}">Borrow this Content</a>
+    </form>
+    {% endfor %}
+    <br>
+    <br>
+
+    <a href="/">Return</a>
+
+    
+</body>
+</html>
